@@ -13,3 +13,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Order {
+  id        Int      @id @default(autoincrement())
+  item      String
+  quantity  Int
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+}
